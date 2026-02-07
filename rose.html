@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>For Ishuuu 🌹</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: radial-gradient(circle at center, #2e000e, #050004);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+  font-family: 'Playfair Display', serif;
+}
+
+.container {
+  text-align: center;
+  position: relative;
+}
+
+.title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 58px;
+  margin-bottom: -10px;
+  color: #ff9bb5;
+  text-shadow: 0 0 15px rgba(255, 155, 181, 0.4);
+  opacity: 0;
+  animation: fade 2s forwards;
+}
+
+svg {
+  width: 320px;
+  height: 450px;
+  animation: float 4s ease-in-out infinite 6s;
+}
+
+.stem {
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: drawStem 2.5s ease-out forwards;
+}
+
+.leaf {
+  opacity: 0;
+  transform-origin: center;
+  animation: leafIn 1.2s ease-out forwards;
+}
+
+.leaf.left { animation-delay: 1.8s; }
+.leaf.right { animation-delay: 2.1s; }
+
+.petal {
+  transform-origin: center bottom;
+  transform: scale(0) rotate(0deg);
+  opacity: 0;
+}
+
+.outer-petal {
+  animation: bloomPetal 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards 2.5s;
+}
+
+.inner-petal {
+  animation: bloomPetal 2s cubic-bezier(0.4, 0, 0.2, 1) forwards 3.5s;
+}
+
+.core {
+  animation: bloomPetal 1.5s cubic-bezier(0.4, 0, 0.2, 1) forwards 4.2s;
+}
+
+.message {
+  margin-top: 15px;
+  font-size: 20px;
+  opacity: 0;
+  animation: fade 2s forwards 5.5s;
+}
+
+.name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 40px;
+  color: #ff4d8d;
+  display: block;
+}
+
+@keyframes drawStem {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes bloomPetal {
+  0% { transform: scale(0) translateY(10px); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+@keyframes leafIn {
+  0% { opacity: 0; transform: scale(0) rotate(-20deg); }
+  100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+@keyframes fade {
+  to { opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="title">Happy Rose Day</div>
+
+  <svg viewBox="0 0 200 400">
+    <defs>
+      <radialGradient id="petalLight" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#ff75a7"/>
+        <stop offset="100%" stop-color="#b10036"/>
+      </radialGradient>
+      
+      <radialGradient id="petalDark" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#8a0022"/>
+        <stop offset="100%" stop-color="#3d000d"/>
+      </radialGradient>
+
+      <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#2ddc83"/>
+        <stop offset="100%" stop-color="#0a3d24"/>
+      </linearGradient>
+    </defs>
+
+    <path class="stem"
+      d="M100 380 Q95 250, 100 145"
+      fill="none"
+      stroke="#1fa463"
+      stroke-width="4"
+      stroke-linecap="round"/>
+
+    <path class="leaf left"
+      d="M98 280 Q60 280, 50 240 Q80 230, 98 280"
+      fill="url(#leafGrad)"/>
+
+    <path class="leaf right"
+      d="M102 250 Q140 250, 150 210 Q120 200, 102 250"
+      fill="url(#leafGrad)"/>
+
+    <g class="flower-head">
+      <path class="petal outer-petal" d="M100 145 Q60 145, 55 100 Q100 60, 145 100 Q140 145, 100 145" fill="url(#petalDark)" />
+      <path class="petal inner-petal" d="M100 140 Q75 140, 70 105 Q100 85, 130 105 Q125 140, 100 140" fill="url(#petalLight)" />
+      <path class="petal core" d="M100 130 Q85 130, 85 110 Q100 100, 115 110 Q115 130, 100 130" fill="#66001a" />
+      <path class="petal core" d="M100 120 Q93 120, 93 112 Q100 108, 107 112 Q107 120, 100 120" fill="#3d000d" />
+    </g>
+  </svg>
+
+  <div class="message">
+    This rose blooms only for
+    <span class="name">Ishuuu</span>
+   Hawasbhara. Deep. Forever. 🌹
+  </div>
+</div>
+
+</body>
+</html>
